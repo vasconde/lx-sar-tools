@@ -57,7 +57,7 @@ setup(
     ],
     keywords = 'SAR',
     packages = find_packages(exclude=['docs', 'tests*']),
-    install_requires = ['numpy', 'scipy', 'matplotlib'],
+    install_requires = ['docopt','numpy', 'scipy', 'matplotlib'],
     extras_require = {
         'test': ['coverage', 'pytest', 'pytest-cov'],
     },
