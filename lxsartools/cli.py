@@ -4,6 +4,8 @@ lx-sar-tools
 Usage:
   lx-sar-tools hello
   lx-sar-tools plot_snap_band input <in_name> output <out_name>
+  lx-sar-tools snap_band2mat input <in_name> output <out_name>
+  lx-sar-tools filter2d input <in_name> output <out_name> wsize <wsize>
   lx-sar-tools -h | --help
   lx-sar-tools --version
 
