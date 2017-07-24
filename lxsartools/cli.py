@@ -3,10 +3,11 @@ lx-sar-tools
 
 Usage:
   lx-sar-tools hello
-  lx-sar-tools plot_snap_band input <in_name> output <out_name>
-  lx-sar-tools snap_band2mat input <in_name> output <out_name>
+  lx-sar-tools plot_band input <in_name> output <out_name>
+  lx-sar-tools band2mat input <in_name> output <out_name>
   lx-sar-tools filter2d input <in_name> output <out_name> wsize <wsize>
   lx-sar-tools filter2d_complex inputi <in_name_i> inputq <in_name_q> output <out_name> wsize <wsize>
+  lx-sar-tools filter2d_complex_mask inputi <in_name_i> inputq <in_name_q> mask <in_mask_name> wsize <wsize> outputi <out_name_i> outputq <out_name_q>
   lx-sar-tools -h | --help
   lx-sar-tools --version
 
@@ -22,6 +23,7 @@ Help:
   https://github.com/vasconde/lx-sar-tools
 """
 
+import pdb
 
 from inspect import getmembers, isclass
 
@@ -41,7 +43,18 @@ def main():
         if hasattr(lxsartools.tools, k) and v:
             module = getattr(lxsartools.tools, k)
             lxsartools.tools = getmembers(module, isclass)
+
+            # VC
+            aux_con = getmembers(module, isclass)
+            for elem in aux_con:
+                if (elem[0].lower() == k.lower()):
+                    #print(elem)
+                    lxsartools.tools[0] = elem
+            
+            # VC
+            
             command = [command[1] for command in lxsartools.tools if command[0] != 'Base'][0]
+            #pdb.set_trace()
             command = command(options)
 			
             command.run()
