@@ -8,6 +8,7 @@ Usage:
   lx-sar-tools filter2d input <in_name> output <out_name> wsize <wsize>
   lx-sar-tools filter2d_complex inputi <in_name_i> inputq <in_name_q> output <out_name> wsize <wsize>
   lx-sar-tools filter2d_complex_mask inputi <in_name_i> inputq <in_name_q> mask <in_mask_name> wsize <wsize> outputi <out_name_i> outputq <out_name_q>
+  lx-sar-tools coherence inputi1 <in_name_i_1> inputq1 <in_name_q_1> inputi2 <in_name_i_2> inputq2 <in_name_q_2> wsize <wsize> output <out_name>
   lx-sar-tools -h | --help
   lx-sar-tools --version
 
